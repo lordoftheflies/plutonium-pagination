@@ -1,5 +1,12 @@
 {
   "name": "plutonium-pagination",
+  "version": "0.0.2",
+  "authors": [
+    "Hegedűs László <laszlo.hegedus@cherubits.hu>"
+  ],
+  "demos": {
+    "Demos": "demo/index.html"
+  },
   "description": "Pagination component based Polymer.",
   "main": "plutonium-pagination.html",
   "dependencies": {
@@ -13,6 +20,7 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
   },
   "resolutions": {
-    "polymer": "^2.0.0"
+    "polymer": "^2.0.0",
+    "webcomponentsjs": "^1.0.0"
   }
 }

@@ -35,5 +35,5 @@ Your application is already set up to be tested via [web-component-tester](https
 ```
 -->
 ```html
-<plutonium-pagination></plutonium-pagination>
+<plutonium-pagination page="1" total="101" limit="10" size="2"></plutonium-pagination>
 ```
