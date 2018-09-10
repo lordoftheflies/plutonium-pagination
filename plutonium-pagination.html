@@ -41,7 +41,7 @@
         </style>
 
         <div class="paginator-page-container" hidden="[[!hasPage]]">
-            <paper-icon-button icon="my-icons:navigate-before" on-tap="onBefore" hidden="[[!hasBefore]]"></paper-icon-button>
+            <paper-icon-button icon="plutonium-pagination-icons:navigate-before" on-tap="onBefore" hidden="[[!hasBefore]]"></paper-icon-button>
             <span>Page</span>
             <template is="dom-repeat" items="[[items]]" id="palette">
                 <paper-button
@@ -53,7 +53,7 @@
             </template>
             <span>of</span>
             [[pages]]
-            <paper-icon-button icon="my-icons:navigate-next" on-tap="onNext" hidden="[[!hasNext]]"></paper-icon-button>
+            <paper-icon-button icon="plutonium-pagination-icons:navigate-next" on-tap="onNext" hidden="[[!hasNext]]"></paper-icon-button>
         </div>
     </template>
 
