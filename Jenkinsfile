@@ -39,7 +39,7 @@ pipeline {
                 script {
                     if (env.BRANCH_NAME == 'master') {
                         def bower = readJSON file: 'bower.json'
-                        echo "Application version: $manifest.version"
+                        echo "Application version: $bower.version"
                         sh "bumpversion --allow-dirty --message 'Jenkins Build ${BUILD_NUMBER} bump version of portalcrawler: {current_version}: {new_version}' --commit --current-version '${bower.version}' patch ./bower.json"
                     }
                 }
