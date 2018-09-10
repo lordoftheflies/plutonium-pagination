@@ -59,7 +59,7 @@ pipeline {
                 script {
                     if (env.BRANCH_NAME == 'master') {
                         def bower = readJSON file: 'bower.json'
-                        sh "curl --data '{\"tag_name\": \"${bower.version}\",\"target_commitish\": \"master\",\"name\": \"${bower.version}\",\"body\": \"Release of version ${bower.version}\",\"draft\": false,\"prerelease\": false}' https://api.github.com/repos/lordoftheflies/plutonium-pagination/releases?access_token=a0247efa6210580b301c963c9dba0f7af8f1b67f"
+                        sh "curl --data '{\"tag_name\": \"${bower.version}\",\"target_commitish\": \"master\",\"name\": \"${bower.version}\",\"body\": \"Release of version ${bower.version}\",\"draft\": false,\"prerelease\": false}' https://lordoftheflies:Armageddon4325@api.github.com/repos/lordoftheflies/plutonium-pagination/releases?access_token=a0247efa6210580b301c963c9dba0f7af8f1b67f"
                         slackSend color: "warning", channel: "#jenkins", message: "Build #${env.BUILD_NUMBER} Distribution of ${bower.version} Completed - ${env.JOB_NAME} (<https://jenkins.cherubits.hu/blue/organizations/jenkins/plutonium-pagination/detail/master/${env.BUILD_NUMBER}/pipeline|Open build>, <https://www.webcomponents.org/element/lordoftheflies/plutonium-pagination|Visit>)"
                     }
 
