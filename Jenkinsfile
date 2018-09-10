@@ -15,7 +15,7 @@ pipeline {
         stage('checkout') {
             steps {
                 slackSend channel: "${SLACK_CHANNEL}", message: "Build #${env.BUILD_NUMBER} Started - ${env.JOB_NAME} (<${env.BUILD_URL}|Open build>)"
-                git(url: 'git@github.com:lordoftheflies/${BUILT_COMPONENT_NAME}.git', branch: 'master', changelog: true, credentialsId: '${GITHUB_CREDENTIALS_ID}', poll: true)
+                git(url: "git@github.com:lordoftheflies/${BUILT_COMPONENT_NAME}.git", branch: 'master', changelog: true, credentialsId: '${GITHUB_CREDENTIALS_ID}', poll: true)
             }
         }
 
