@@ -47,7 +47,8 @@ pipeline {
                     if (env.BRANCH_NAME == 'master') {
                         def bower = readJSON file: 'bower.json'
                         echo "Application version: $bower.version"
-                        sh "bumpversion --allow-dirty --message 'Jenkins Build ${BUILD_NUMBER} bump version of portalcrawler: {current_version}: {new_version}' --commit --current-version '${bower.version}' patch ./bower.json"
+                        sh "bumpversion --allow-dirty --message 'Jenkins Build ${BUILD_NUMBER} bump version of portalcrawler: {current_version}: {new_version}' --commit --tag --tag-name 'v{new_version}' --current-version '${bower.version}' patch ./bower.json"
+                        sh '''git push origin master'''
                     }
                 }
             }
