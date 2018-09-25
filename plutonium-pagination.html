@@ -41,6 +41,7 @@
         </style>
 
         <div class="paginator-page-container" hidden="[[!hasPage]]">
+            <paper-icon-button icon="plutonium-pagination-icons:fast-rewind" on-tap="onBegin" hidden="[[!hasBefore]]"></paper-icon-button>
             <paper-icon-button icon="plutonium-pagination-icons:navigate-before" on-tap="onBefore" hidden="[[!hasBefore]]"></paper-icon-button>
             <span>Page</span>
             <template is="dom-repeat" items="[[items]]" id="palette">
@@ -54,6 +55,7 @@
             <span>of</span>
             [[pages]]
             <paper-icon-button icon="plutonium-pagination-icons:navigate-next" on-tap="onNext" hidden="[[!hasNext]]"></paper-icon-button>
+            <paper-icon-button icon="plutonium-pagination-icons:fast-forward" on-tap="onEnd" hidden="[[!hasNext]]"></paper-icon-button>
         </div>
     </template>
 
@@ -146,7 +148,7 @@
                     this.set('pages', parseInt(Math.ceil(parseFloat(total) / parseFloat(limit))));
                 }
 
-                if (page, limit, total) {
+                if (page && limit && total) {
                     let items = [];
                     let firstIndex = this._firstIndex(page, this.get('size'));
                     let lastIndex = this._lastIndex(page, this.get('size'));
@@ -197,6 +199,13 @@
 
             onNext(event) {
                 this.set('page', this.get('page') < this.get('pages') ? this.get('page') + 1 : this.get('pages'));
+            }
+            onBegin(event) {
+                this.set('page', 1);
+            }
+
+            onEnd(event) {
+                this.set('page', this.get('pages'));
             }
         }
 
