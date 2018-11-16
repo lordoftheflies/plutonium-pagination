@@ -89,7 +89,8 @@
                     page: {
                         type: Number,
                         notify: true,
-                        value: () => 1
+                        value: () => 1,
+                        observer: 'onPageChange'
                     },
                     /** Count of the pages displayed before or after the current page. */
                     size: {
@@ -163,7 +164,11 @@
 
 
             }
-
+            
+			onPageChange(newValue, oldValue){
+				this.dispatchEvent(new CustomEvent('pageChange', {detail: {newPage: newValue, oldPage:oldValue}}));
+			}
+			
             _firstIndex(page, size) {
                 let index = page - size;
                 if (index < 1) {
