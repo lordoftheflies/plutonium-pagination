@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
     <title>plutonium-pagination test</title>
-
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
-
-    <link rel="import" href="../plutonium-pagination.html">
+    <script src="../node_modules/wct-browser-legacy/browser.js"></script>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script type="module" src="../plutonium-pagination.js"></script>
   </head>
   <body>
 
@@ -31,6 +29,12 @@
         test('instantiating the element with default properties works', () => {
           const element = fixture('BasicTestFixture');
           assert.equal(element.limit, undefined);
+
+        suite('plutonium-pagination', () => {
+
+        test('instantiating the element with default properties works', () => {
+          const element = fixture('BasicTestFixture');
+          assert.equal(element.limit, undefined);
           // const elementShadowRoot = element.shadowRoot;
           // const elementHeader = elementShadowRoot.querySelector('limit');
           // assert.equal(elementHeader.innerHTML, 'Hello plutonium-pagination!');
@@ -44,9 +48,8 @@
           // const elementHeader = elementShadowRoot.querySelector('h2');
           // assert.equal(elementHeader.innerHTML, '100');
         });
-
+        
+        });
+        })
       });
     </script>
-
-  </body>
-</html>
