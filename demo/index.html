@@ -6,25 +6,38 @@
 
     <title>plutonium-pagination demo</title>
 
-    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-
-    <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../plutonium-pagination.html">
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script type="module" src="../node_modules/@polymer/iron-demo-helpers/demo-snippet.js"></script>
+    <script type="module" src="../plutonium-pagination.js"></script>
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
       </style>
     </custom-style>
-  </head>
-  <body>
-    <div class="vertical-section-container centered">
-      <h3>Basic plutonium-pagination demo</h3>
+
+    <script type="module">
+      const $_documentContainer = document.createElement('template');
+
+      $_documentContainer.innerHTML = `
+          <custom-style>
+            <style is="custom-style" include="demo-pages-shared-styles">
+            </style>
+          </custom-style>`;
+
+      document.body.appendChild($_documentContainer.content);
+    </script>
+    <h3>Plutonium-pagination demo</h3>
       <demo-snippet>
         <template>
-          <plutonium-pagination page="1" total="101" limit="10" size="2"></plutonium-pagination>
-        </template>
-      </demo-snippet>
-    </div>
-  </body>
-</html>
+          <script type="module">
+            const $_documentContainer = document.createElement('template');
+            $_documentContainer.innerHTML = `<div class="vertical-section-container centered">
+                  <h3>Basic plutonium-pagination demo</h3>
+                  <demo-snippet>
+                    <template>
+                      <plutonium-pagination page="1" total="101" limit="10" size="2"></plutonium-pagination>
+                    </template>
+                  </demo-snippet>
+                </div>`;
+            document.body.appendChild($_documentContainer.content);
+          </script>

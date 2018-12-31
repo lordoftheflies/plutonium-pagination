@@ -1,0 +1,24 @@
+{
+  "description": "Pagination component based Polymer.",
+  "name": "@polymer/plutonium-pagination",
+  "version": "1.0.0",
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "main": "plutonium-pagination.js",
+  "author": "Hegedűs László <laszlo.hegedus@cherubits.hu>",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0",
+    "@polymer/paper-button": "^3.0.0",
+    "@polymer/paper-icon-button": "^3.0.0",
+    "@polymer/iron-iconset-svg": "^3.0.0"
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
+  }
+}
